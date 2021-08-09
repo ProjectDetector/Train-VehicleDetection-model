@@ -36,45 +36,45 @@ def get_model():
     model = Sequential()
     
     # Layer 1
-    model.add(Convolution2D(16, 3, 3,input_shape=(3,448,448),padding='same',subsample=(1,1)))
+    model.add(Convolution2D(16, (3, 3),input_shape=(3,448,448),padding='same',strides=(1,1)))
     model.add(LeakyReLU(alpha=0.1))
     model.add(MaxPooling2D(pool_size=(2, 2)))
     
     # Layer 2
-    model.add(Convolution2D(32,3,3 ,padding='same'))
+    model.add(Convolution2D(32,(3,3) ,padding='same'))
     model.add(LeakyReLU(alpha=0.1))
     model.add(MaxPooling2D(pool_size=(2, 2),padding='valid'))
     
     # Layer 3
-    model.add(Convolution2D(64,3,3 ,padding='same'))
+    model.add(Convolution2D(64,(3,3) ,padding='same'))
     model.add(LeakyReLU(alpha=0.1))
     model.add(MaxPooling2D(pool_size=(2, 2),padding='valid'))
     
     # Layer 4
-    model.add(Convolution2D(128,3,3 ,padding='same'))
+    model.add(Convolution2D(128,(3,3) ,padding='same'))
     model.add(LeakyReLU(alpha=0.1))
     model.add(MaxPooling2D(pool_size=(2, 2),padding='valid'))
     
     # Layer 5
-    model.add(Convolution2D(256,3,3 ,padding='same'))
+    model.add(Convolution2D(256,(3,3) ,padding='same'))
     model.add(LeakyReLU(alpha=0.1))
     model.add(MaxPooling2D(pool_size=(2, 2),padding='valid'))
     
     # Layer 6
-    model.add(Convolution2D(512,3,3 ,padding='same'))
+    model.add(Convolution2D(512,(3,3) ,padding='same'))
     model.add(LeakyReLU(alpha=0.1))
     model.add(MaxPooling2D(pool_size=(2, 2),padding='valid'))
     
     # Layer 7
-    model.add(Convolution2D(1024,3,3 ,padding='same'))
+    model.add(Convolution2D(1024,(3,3) ,padding='same'))
     model.add(LeakyReLU(alpha=0.1))
     
     # Layer 8
-    model.add(Convolution2D(1024,3,3 ,padding='same'))
+    model.add(Convolution2D(1024,(3,3) ,padding='same'))
     model.add(LeakyReLU(alpha=0.1))
     
     # Layer 9
-    model.add(Convolution2D(1024,3,3 ,padding='same'))
+    model.add(Convolution2D(1024,(3,3) ,padding='same'))
     model.add(LeakyReLU(alpha=0.1))
     
     model.add(Flatten())
