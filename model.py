@@ -29,7 +29,7 @@ from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.core import Flatten, Dense
 
 # Pre trained weights require this ordering
-keras.backend.set_image_dim_ordering('th')
+keras.backend.set_image_data_format('channels_first')
 
 def get_model():
     model = Sequential()
