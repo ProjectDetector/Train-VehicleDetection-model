@@ -22,6 +22,7 @@ def preprocess(image):
     return transposed
 
 
+from typing import List
 import keras
 from keras.models import Sequential
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
@@ -126,7 +127,7 @@ def box_iou(a: Box, b: Box) -> float:
     """Intersection over union, which is ratio of intersection area to union area of the 2 boxes"""
     return box_intersection(a, b) / box_union(a, b)
 
-def model_output_to_boxes(yolo_output, threshold=0.2, sqrt=1.8, C=20, B=2, S=7) -> list[Box]:
+def model_output_to_boxes(yolo_output, threshold=0.2, sqrt=1.8, C=20, B=2, S=7) -> List[Box]:
     """yolo_output_to_car_boxes"""
 
     # Position for class 'car' in the VOC dataset classes
