@@ -198,7 +198,7 @@ def model_output_to_boxes(yolo_output, threshold=0.2, sqrt=1.8, C=20, B=2, S=7) 
 >>> model = get_model()
 >>> model.load_weights('model.weights')
 
->>> img = mpimg.imread('testimg.jpg', 0)
+>>> img = mpimg.imread('testimg.jpg')
 
 >>> pre_precessed = preprocess(img)
 >>> batch = np.expand_dims(pre_precessed, axis=0)
