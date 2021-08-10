@@ -7,7 +7,7 @@ import matplotlib.image as mpimg
 # Preprocessing
 
 def crop_and_resize(image):
-    cropped = image[300:650,500:,:]
+    # cropped = image[300:650,500:,:] # skip for now
     return cv2.resize(cropped, (448,448))
 
 def normalize(image):
